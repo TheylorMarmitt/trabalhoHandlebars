@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+<body>
+    <fieldset>
+        <legend><h2>UFs</h2></legend>
+        <table style="width:50%; margin:0 auto">
+            <tr>
+                <th style="text-align:center; border-style:solid">Id</th>
+                <th style="text-align:center; border-style:solid">Nome</th> 
+                <th style="text-align:center; border-style:solid">Sigla</th> 
+            </tr>
+            <% for (const u of ufs) { %>
+                <tr>
+                    <th style="text-align:center; border-style:solid;  border-color: darkgray"> <%= u.id %> </th>
+                    <th style="text-align:center; border-style:solid; border-color: darkgray"> <%= u.nome %> </th>
+                    <th style="text-align:center; border-style:solid; border-color: darkgray"> <%= u.sigla %> </th>
+                </tr>
+           <% } %>
+        </table>
+    </fieldset> 
+    <a href="/uf/cadastro"><button style="margin-left:65%" >Novo cadastro</button></a>
+</body>
+</html>

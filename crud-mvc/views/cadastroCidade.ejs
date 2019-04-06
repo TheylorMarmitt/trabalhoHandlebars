@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+<body>
+    <fieldset>
+        <form action="/cidade/cadastrar" method="POST">
+            <label>Id: </label><input type="number" name="cidade.id" required="required">
+            <br>
+            <label>Nome: </label><input type="text" name="cidade.nome" required="required">
+            <br>
+            <% for (const uf of ufs) { %>
+                <select name= <%= uf.id %> >
+                    <option><%= uf.sigla %></option>
+                </select>
+            <% } %>   
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+    </fieldset>
+    <a href="/cidade/listar"><button style="margin-left: 10%" >Lista</button></a>
+</body>
+</html>
