@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
 </head>
 <body>
     <fieldset>
         <form action="/cidade/cadastrar" method="POST">
-
-            <label>Nome: </label><input type="text" name="nome" required="required">
+            <div class="form-group">
+                <label>Nome: </label><input type="text" name="nome" required="required">
+            </div>  
+            <div class="form-group">
+                <label>UF: </label>
+                <select name="uf" required>
+                    <% ufs.forEach((uf)=>{ %>
+                        <option value="<%= uf.id %>"><%= uf.sigla %></option>
+                    <% }) %>
+                </select>
+            </div>
             <br>
-            <label>UF: </label>
-            <select name="uf" required>
-                <% ufs.forEach((uf)=>{ %>
-                    <option value="<%= uf.id %>"><%= uf.sigla %></option>
-                <% }) %>
-            </select>
-            <br>
-            <button type="submit">Cadastrar</button>
+            <button type="submit" class="btn btn-default">Cadastrar</button>
         </form>
     </fieldset>
+    <br>
     <a href="/cidade/listar"><button >Lista</button></a>
-
-    <a href="/uf/cadastro"><button style="margin-left:10%" >Cadastro UF</button></a>
-    <a href="/pessoa/cadastro"><button style="margin-left:1.2%" >Cadastro pessoa</button></a>
+    <a href="/uf/cadastro"><button type="button" class= "btn btn-primary" >Cadastro UF</button></a>
+    <a href="/pessoa/cadastro"><button type="button" class= "btn btn-primary" >Cadastro pessoa</button></a>
 </body>
 </html>
