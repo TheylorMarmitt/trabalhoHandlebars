@@ -9,26 +9,23 @@
 <body>
     <fieldset>
         <form action="/pessoa/cadastrar" method="POST">
-            <label>Id: </label><input type="number" name="id" required="required">
-            <br>
+        
             <label>Nome: </label><input type="text" name="nome" required="required">
             <br>
             <label>Sobrenome: </label><input type="text" name="sobrenome" required="required">
             <br>
             <label>Cidade: </label>
+            <select name="cidade" required>
+                <% cidades.forEach((cidade)=>{ %>
+                    <option value="<%= cidade.id %>"><%= cidade.nome %></option>
+                <% }) %>
+            </select>
             <br>
-            <% for (const c of cidades) { %>
-                <select name= <%= c %> >
-                    <option><%= c.nome %></option>
-                </select>
-            <% } %>   
-            
             <button type="submit">Cadastrar</button>
         </form>
     </fieldset>
-    <a href="/pessoa/listar"><button style="margin-left: 10%" >Lista</button></a>
-
-    <a href="/uf/cadastro"><button style="margin-left:65%" >Cadastro UF</button></a>
-    <a href="/cidade/cadastro"><button style="margin-left:65%" >Cadastro cidade</button></a>
+    <a href="/pessoa/listar"><button  >Lista</button></a>
+    <a href="/uf/cadastro"><button style="margin-left:10%" >Cadastro UF</button></a>
+    <a href="/cidade/cadastro"><button style="margin-left:1.2%" >Cadastro cidade</button></a>
 </body>
 </html>

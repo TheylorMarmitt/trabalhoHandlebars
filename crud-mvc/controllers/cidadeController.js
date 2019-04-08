@@ -14,9 +14,9 @@ const lista = function(request, response){
 
 const listar = function(request, response){
 
-    let cidade = new cidadeClass(request.body.id, request.body.nome, ufController.buscar(request.body.uf));
+    let cidade = new cidadeClass(request.body.id || new Date().getTime(), request.body.nome, ufController.buscar(request.body.uf));
     listaCidades.push(cidade);
-    console.log(cidade);
+    console.log(cidade.uf[0].sigla);
     response.render("listaCidade", {"cidades": listaCidades});
 
 }
@@ -26,3 +26,9 @@ module.exports.lista=lista;
 module.exports.cadastro=cadastro;
 
 module.exports.listaCidades=listaCidades;
+
+module.exports.buscar = (id) =>{
+    return listaCidades.filter((u) => {
+        return parseInt(u.id) == parseInt(id);
+    })
+}

@@ -11,7 +11,7 @@ const lista = function(request, response){
 }
 
 const listar = function(request, response){
-    let uf = new unidadeFederativaClass(request.body.id, request.body.nome, request.body.sigla);
+    let uf = new unidadeFederativaClass(request.body.id || new Date().getTime(), request.body.nome, request.body.sigla);
     listaUfs.push(uf);
     response.render("listaUf", {"ufs": listaUfs});
 

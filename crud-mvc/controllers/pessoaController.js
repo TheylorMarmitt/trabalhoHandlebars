@@ -13,7 +13,7 @@ const lista = function(request, response){
 
 const listar = function(request, response){
 
-    let pessoa = new pessoaClass(request.body.id, request.body.nome, request.body.sobrenome, request.body.cidade);
+    let pessoa = new pessoaClass(request.body.id || new Date().getTime(), request.body.nome, request.body.sobrenome, cidadeController.buscar(request.body.cidade));
     listaPessoas.push(pessoa);
     response.render("listaPessoa", {"pessoas": listaPessoas});
 

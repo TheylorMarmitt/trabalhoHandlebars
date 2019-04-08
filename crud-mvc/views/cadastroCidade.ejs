@@ -9,23 +9,22 @@
 <body>
     <fieldset>
         <form action="/cidade/cadastrar" method="POST">
-            <label>Id: </label><input type="number" name="id" required="required">
-            <br>
+
             <label>Nome: </label><input type="text" name="nome" required="required">
             <br>
-            
+            <label>UF: </label>
             <select name="uf" required>
                 <% ufs.forEach((uf)=>{ %>
                     <option value="<%= uf.id %>"><%= uf.sigla %></option>
                 <% }) %>
             </select>
-            
+            <br>
             <button type="submit">Cadastrar</button>
         </form>
     </fieldset>
-    <a href="/cidade/listar"><button style="margin-left: 10%" >Lista</button></a>
+    <a href="/cidade/listar"><button >Lista</button></a>
 
-    <a href="/uf/cadastro"><button style="margin-left:65%" >Cadastro UF</button></a>
-    <a href="/pessoa/cadastro"><button style="margin-left:65%" >Cadastro pessoa</button></a>
+    <a href="/uf/cadastro"><button style="margin-left:10%" >Cadastro UF</button></a>
+    <a href="/pessoa/cadastro"><button style="margin-left:1.2%" >Cadastro pessoa</button></a>
 </body>
 </html>

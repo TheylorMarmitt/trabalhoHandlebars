@@ -18,9 +18,9 @@
 
             <% cidades.forEach((cidade) => { %>
                 <tr>
-                    <td><%= cidade.id %></td>
-                    <td><%= cidade.nome %></td>
-                    <td><%= cidade.uf.sigla %></td>
+                    <td style="text-align:center; border-style:solid; border-color: darkgray"><%= cidade.id %></td>
+                    <td style="text-align:center; border-style:solid; border-color: darkgray"><%= cidade.nome %></td>
+                    <td style="text-align:center; border-style:solid; border-color: darkgray"><%= cidade.uf[0].sigla %></td>
                 </tr>
             <% }) %>
             
