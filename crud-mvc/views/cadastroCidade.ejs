@@ -14,11 +14,11 @@
             <label>Nome: </label><input type="text" name="nome" required="required">
             <br>
             
-            <% for (const uf of ufs) { %>
-                <select name= <%= uf %> >
-                    <option><%= uf.sigla %></option>
-                </select>
-            <% } %>   
+            <select name="uf" required>
+                <% ufs.forEach((uf)=>{ %>
+                    <option value="<%= uf.id %>"><%= uf.sigla %></option>
+                <% }) %>
+            </select>
             
             <button type="submit">Cadastrar</button>
         </form>

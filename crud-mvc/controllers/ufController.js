@@ -23,3 +23,9 @@ module.exports.lista=lista;
 module.exports.cadastro=cadastro;
 
 module.exports.listaUfs=listaUfs;
+
+module.exports.buscar = (id) =>{
+    return listaUfs.filter((u) => {
+        return parseInt(u.id) == parseInt(id);
+    })
+}

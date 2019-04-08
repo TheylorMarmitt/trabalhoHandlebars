@@ -13,17 +13,13 @@ const lista = function(request, response){
 }
 
 const listar = function(request, response){
-    console.log(request.body.uf);
-    console.log("-----"+ request.body.idUf);
 
-
-    let cidade = new cidadeClass(request.body.id, request.body.nome, new ufClass());
+    let cidade = new cidadeClass(request.body.id, request.body.nome, ufController.buscar(request.body.uf));
     listaCidades.push(cidade);
-    console.log(listaCidades);
+    console.log(cidade);
     response.render("listaCidade", {"cidades": listaCidades});
 
 }
-
 
 module.exports.listar=listar;
 module.exports.lista=lista;
