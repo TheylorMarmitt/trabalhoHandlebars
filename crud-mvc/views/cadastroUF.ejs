@@ -9,15 +9,17 @@
 <body>
     <fieldset>
         <form action="/uf/cadastrar" method="POST">
-            <label>Id: </label><input type="number" name="uf.id" required="required">
+            <label>Id: </label><input type="number" name="id" required="required">
             <br>
-            <label>Nome: </label><input type="text" name="uf.nome" required="required">
+            <label>Nome: </label><input type="text" name="nome" required="required">
             <br>
-            <label>Sigla: </label><input type="text" name="uf.sigla" required="required">
+            <label>Sigla: </label><input type="text" name="sigla" required="required">
             <br>
             <button type="submit">Cadastrar</button>
         </form>
     </fieldset>
     <a href="/uf/listar"><button style="margin-left: 10%" >Lista</button></a>
+    <a href="/cidade/cadastro"><button style="margin-left:65%" >Cadastro cidade</button></a>
+    <a href="/pessoa/cadastro"><button style="margin-left:65%" >Cadastro pessoa</button></a>
 </body>
 </html>

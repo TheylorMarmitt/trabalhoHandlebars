@@ -9,12 +9,13 @@
 <body>
     <fieldset>
         <form action="/cidade/cadastrar" method="POST">
-            <label>Id: </label><input type="number" name="cidade.id" required="required">
+            <label>Id: </label><input type="number" name="id" required="required">
             <br>
-            <label>Nome: </label><input type="text" name="cidade.nome" required="required">
+            <label>Nome: </label><input type="text" name="nome" required="required">
             <br>
+            
             <% for (const uf of ufs) { %>
-                <select name= <%= uf.id %> >
+                <select name= <%= uf %> >
                     <option><%= uf.sigla %></option>
                 </select>
             <% } %>   
@@ -23,5 +24,8 @@
         </form>
     </fieldset>
     <a href="/cidade/listar"><button style="margin-left: 10%" >Lista</button></a>
+
+    <a href="/uf/cadastro"><button style="margin-left:65%" >Cadastro UF</button></a>
+    <a href="/pessoa/cadastro"><button style="margin-left:65%" >Cadastro pessoa</button></a>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 class UnidadeFederativa{
     constructor(id, nome, sigla){
-        this.id = id || new Date.getTime();
+        this.id = id;
         this.nome = nome;
         this.sigla = sigla;
     }

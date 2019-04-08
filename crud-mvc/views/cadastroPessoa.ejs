@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+<body>
+    <fieldset>
+        <form action="/pessoa/cadastrar" method="POST">
+            <label>Id: </label><input type="number" name="id" required="required">
+            <br>
+            <label>Nome: </label><input type="text" name="nome" required="required">
+            <br>
+            <label>Sobrenome: </label><input type="text" name="sobrenome" required="required">
+            <br>
+            <label>Cidade: </label>
+            <br>
+            <% for (const c of cidades) { %>
+                <select name= <%= c %> >
+                    <option><%= c.nome %></option>
+                </select>
+            <% } %>   
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+    </fieldset>
+    <a href="/pessoa/listar"><button style="margin-left: 10%" >Lista</button></a>
+
+    <a href="/uf/cadastro"><button style="margin-left:65%" >Cadastro UF</button></a>
+    <a href="/cidade/cadastro"><button style="margin-left:65%" >Cadastro cidade</button></a>
+</body>
+</html>

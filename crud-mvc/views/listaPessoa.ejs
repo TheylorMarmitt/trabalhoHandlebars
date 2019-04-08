@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+<body>
+    <fieldset>
+        <legend><h2>Pessoas</h2></legend>
+        <table style="width:50%; margin:0 auto">
+            <tr>
+                <th style="text-align:center; border-style:solid">Id</th>
+                <th style="text-align:center; border-style:solid">Nome</th> 
+                <th style="text-align:center; border-style:solid">Sobrenome</th> 
+                <th style="text-align:center; border-style:solid">Cidade</th> 
+            </tr>
+            <% for (const p of pessoas) { %>
+                <tr>
+                    <th style="text-align:center; border-style:solid;  border-color: darkgray"> <%= p.id %> </th>
+                    <th style="text-align:center; border-style:solid; border-color: darkgray"> <%= p.nome %> </th>
+                    <th style="text-align:center; border-style:solid; border-color: darkgray"> <%= p.sobrenome %> </th>
+                    <th style="text-align:center; border-style:solid; border-color: darkgray"> <%= p.cidade.nome %> </th>
+                </tr>
+           <% } %>
+        </table>
+    </fieldset> 
+    <a href="/pessoa/cadastro"><button style="margin-left:65%" >Novo cadastro</button></a>
+</body>
+</html>

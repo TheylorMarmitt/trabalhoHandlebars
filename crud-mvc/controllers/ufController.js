@@ -17,11 +17,9 @@ const listar = function(request, response){
 
 }
 
-const find = function(request, response){
-    return listaUfs;
-}
 
 module.exports.listar=listar;
 module.exports.lista=lista;
 module.exports.cadastro=cadastro;
-module.exports.find=find;
+
+module.exports.listaUfs=listaUfs;
