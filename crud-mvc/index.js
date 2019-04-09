@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const ejs = require("ejs");
+const hbars = require("handlebars");
 
 const server = express();
 
@@ -8,8 +8,10 @@ const cidadeController = require("./controllers/cidadeController");
 const ufController = require("./controllers/ufController");
 const pessoaController = require("./controllers/pessoaController");
 
+server.engine("handlebars", hbars());
+
 server.set("views", __dirname + "/views"); // especifica onde estao os htmls
-server.set("view engine", "ejs");   // diz que estamos usando EJS para template
+server.set("view engine", "handlebars");   // diz que estamos usando Handlebars para template
 
 server.use(bodyParser.urlencoded({extended: true}));
 
