@@ -18,13 +18,15 @@
                 <th >UF</th> 
             </tr>
 
-            <% cidades.forEach((cidade) => { %>
+            {{#each cidades}}
                 <tr>
-                    <td><%= cidade.id %></td>
-                    <td><%= cidade.nome %></td>
-                    <td><%= cidade.uf[0].sigla %></td>
+                    <td> {{id}} </td>
+                    <td> {{nome }}</td>
+                    {{#uf}}
+                        <td> {{ sigla }} </td>
+                    {{/uf}}
                 </tr>
-            <% }) %>
+            {{/each}}
             
         </table>
     </fieldset> 

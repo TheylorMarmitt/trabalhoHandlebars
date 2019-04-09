@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const hbars = require("handlebars");
+const hbars = require("express-handlebars");
 
 const server = express();
 

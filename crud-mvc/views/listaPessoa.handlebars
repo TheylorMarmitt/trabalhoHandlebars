@@ -18,14 +18,16 @@
                 <th >Sobrenome</th> 
                 <th >Cidade</th> 
             </tr>
-            <% for (const p of pessoas) { %>
+            {{#each pessoas }}
                 <tr>
-                    <th> <%= p.id %> </th>
-                    <th> <%= p.nome %> </th>
-                    <th> <%= p.sobrenome %> </th>
-                    <th> <%= p.cidade[0].nome %> </th>
+                    <td> {{ this.id }} </th>
+                    <td> {{ this.nome }} </th>
+                    <td> {{ this.sobrenome }} </th>
+                    {{#cidade}}
+                        <td> {{ nome }} </td>
+                    {{/cidade}}
                 </tr>
-           <% } %>
+           {{/each}}
         </table>
     </fieldset> 
     <br>

@@ -17,9 +17,9 @@
             <div class="form-group">
                 <label>UF: </label>
                 <select name="uf" required>
-                    <% ufs.forEach((uf)=>{ %>
-                        <option value="<%= uf.id %>"><%= uf.sigla %></option>
-                    <% }) %>
+                    {{#each ufs}}
+                        <option value="{{this.id}}">{{this.sigla}}</option>
+                    {{/each}}
                 </select>
             </div>
             <br>

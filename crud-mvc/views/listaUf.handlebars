@@ -17,13 +17,13 @@
                 <th >Nome</th> 
                 <th >Sigla</th> 
             </tr>
-            <% for (const u of ufs) { %>
+            {{#each ufs }}
                 <tr>
-                    <th> <%= u.id %> </th>
-                    <th> <%= u.nome %> </th>
-                    <th> <%= u.sigla %> </th>
+                    <th> {{ this.id }} </th>
+                    <th> {{ this.nome }} </th>
+                    <th> {{ this.sigla }} </th>
                 </tr>
-           <% } %>
+           {{/each}}
         </table>
     </fieldset> 
     <br>

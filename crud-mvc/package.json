@@ -11,9 +11,8 @@
   "dependencies": {
     "balanced-match": "^1.0.0",
     "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "handlebars": "^4.1.1"
+    "express-handlebars": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
