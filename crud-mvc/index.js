@@ -16,7 +16,7 @@ server.set("view engine", "handlebars");   // diz que estamos usando Handlebars 
 server.use(bodyParser.urlencoded({extended: true}));
 
 server.get("/", function(request, response){
-    response.render("cadastroUF");
+    response.render("inicio");
 });
 
 server.get("/cidade/cadastro", cidadeController.cadastro);
