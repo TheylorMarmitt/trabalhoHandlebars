@@ -9,20 +9,31 @@
   
 </head>
 <body>
-    <fieldset>
-        <form action="/uf/cadastrar" method="POST">
+    <nav class="navbar navbar-default navbar-static-top">
+         <p class="navbar-text">Cadastro de unidade federativa</p>
+         <a href="/pessoa/listar"><button type="button" class="btn navbar-btn">Lista</button></a>
+         <a href="/cidade/cadastro"><button type="button" class= "btn navbar-btn">Cadastro de cidade</button></a>
+         <a href="/pessoa/cadastro"><button type="button" class= "btn navbar-btn">Cadastro de pessoa</button></a>
+    </nav>
+    <div class="container">
+        <form action="/uf/cadastrar" method="POST" class="form-inline">
             <div class="form-group">
-                <label>Nome: </label><input type="text" name="nome" required="required">
+                <label>Nome: </label>
+                <div>
+                    <input type="text" class="form-control" name="nome" required="required">
+                </div>
             </div> 
             <div class="form-group">
-                <label>Sigla: </label><input type="text" name="sigla" required="required">
+                <label>Sigla: </label>
+                <div>
+                    <input type="text" class="form-control" name="sigla" required="required">
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Cadastrar</button>
+            <div class="form-grou row col-sm-12">
+                <br>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
         </form>
-    </fieldset>
-    <br>
-    <a href="/uf/listar"><button type="button" class="btn btn-link" >Lista</button></a>
-    <a href="/cidade/cadastro"><button type="button" class= "btn btn-primary"  >Cadastro cidade</button></a>
-    <a href="/pessoa/cadastro"><button type="button" class= "btn btn-primary" >Cadastro pessoa</button></a>
+    </div>
 </body>
 </html>

@@ -8,27 +8,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
 </head>
-<body>
-    <fieldset>
-        <form action="/pessoa/cadastrar" method="POST">
-        
-            <label>Nome: </label><input type="text" name="nome" required="required">
-            <br>
-            <label>Sobrenome: </label><input type="text" name="sobrenome" required="required">
-            <br>
-            <label>Cidade: </label>
-            <select name="cidade" required>
-                {{#each cidades}}
-                    <option value="{{this.id}}">{{this.nome}}</option>
-                {{/each}}
-            </select>
-            <br>
-            <button type="submit" class="btn btn-default">Cadastrar</button>
-        </form>
-    </fieldset>
-    <br>
-    <a href="/pessoa/listar"><button type="button" class="btn btn-link"  >Lista</button></a>
-    <a href="/uf/cadastro"><button type="button" class= "btn btn-primary" >Cadastro UF</button></a>
-    <a href="/cidade/cadastro"><button type="button" class= "btn btn-primary"  >Cadastro cidade</button></a>
-</body>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top">
+            <p class="navbar-text">Cadastro de pessoa</p>
+            <a href="/pessoa/listar"><button type="button" class="btn navbar-btn">Lista</button></a>
+            <a href="/uf/cadastro"><button type="button" class= "btn navbar-btn">Cadastro UF</button></a>
+            <a href="/cidade/cadastro"><button type="button" class= "btn navbar-btn">Cadastro cidade</button></a>
+        </nav>
+        <div class="container"> 
+            <form action="/pessoa/cadastrar" class="form-inline"method="POST" >
+                <div class="form-group">
+                    <label>Nome: </label>
+                    <div>
+                        <input type="text" class="form-control" name="nome" required="required">
+                    </div>
+                </div> 
+                <div class="form-group">   
+                    <label>Sobrenome: </label>
+                    <div>
+                        <input type="text" class="form-control" name="sobrenome" required="required"> 
+                    </div>
+                </div>
+                <div class="form-group">  
+                    <label class="control-label">Cidade:</label>
+                    <div>
+                        <select class="form-control" name="cidade" required>
+                            {{#each cidades}}
+                                <option value="{{this.id}}">{{this.nome}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12 row">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>  
+            </form>
+        </div>
+    </body>
 </html>
